@@ -13,34 +13,34 @@ def get_user_information_link(
         "withChildren": with_children,
         "withParents": with_parents,
     }
-    return f"https://lyceum.yandex.ru/api/profile?{urlencode(params)}"
+    return f"https://lms.yandex.ru/api/profile?{urlencode(params)}"
 
 
 def get_lessons_list_link(course_id: int, group_id: int) -> str:
     params = {"courseId": course_id, "groupId": group_id}
-    return f"https://lyceum.yandex.ru/api/student/lessons?{urlencode(params)}"
+    return f"https://lms.yandex.ru/api/student/lessons?{urlencode(params)}"
 
 
 def get_lesson_information_link(lesson_id: int, course_id: int, group_id: int) -> str:
     params = {"courseId": course_id, "groupId": group_id}
     return (
-        f"https://lyceum.yandex.ru/api/student/lessons/{lesson_id}?{urlencode(params)}"
+        f"https://lms.yandex.ru/api/student/lessons/{lesson_id}?{urlencode(params)}"
     )
 
 
 def get_tasks_list_link(lesson_id: int, course_id: int, group_id: int) -> str:
     params = {"courseId": course_id, "lessonId": lesson_id, "groupId": group_id}
-    return f"https://lyceum.yandex.ru/api/student/lessonTasks?{urlencode(params)}"
+    return f"https://lms.yandex.ru/api/student/lessonTasks?{urlencode(params)}"
 
 
 def get_task_information_link(task_id: int, group_id: int) -> str:
     params = {"groupId": group_id}
-    return f"https://lyceum.yandex.ru/api/student/tasks/{task_id}?{urlencode(params)}"
+    return f"https://lms.yandex.ru/api/student/tasks/{task_id}?{urlencode(params)}"
 
 
 def get_materials_list_link(lesson_id: int) -> str:
     params = {"lessonId": lesson_id}
-    return f"https://lyceum.yandex.ru/api/materials?{urlencode(params)}"
+    return f"https://lms.yandex.ru/api/materials?{urlencode(params)}"
 
 
 def get_material_information_link(
@@ -49,23 +49,23 @@ def get_material_information_link(
     lesson_id: int,
 ) -> str:
     params = {"groupId": group_id, "lessonId": lesson_id}
-    return f"https://lyceum.yandex.ru/api/student/materials/{material_id}?{urlencode(params)}"
+    return f"https://lms.yandex.ru/api/student/materials/{material_id}?{urlencode(params)}"
 
 
 def get_solution_information_link(solution_id: int) -> str:
-    return f"https://lyceum.yandex.ru/api/student/solutions/{solution_id}"
+    return f"https://lms.yandex.ru/api/student/solutions/{solution_id}"
 
 
 def get_problem_detail_link(solution_id: int) -> str:
     params = {"solutionId": solution_id}
-    return f"https://lyceum.yandex.ru/api/problem/details?{urlencode(params)}"
+    return f"https://lms.yandex.ru/api/problem/details?{urlencode(params)}"
 
 
 def get_problem_solution_link(problem_id: int) -> str:
     params = {"problemLinkId": problem_id}
-    return f"https://lyceum.yandex.ru/api/student/problem/solution?{urlencode(params)}"
+    return f"https://lms.yandex.ru/api/student/problem/solution?{urlencode(params)}"
 
 
 def get_notifications_link(is_read: bool = False) -> str:
     params = {"isRead": is_read}
-    return f"https://lyceum.yandex.ru/api/notifications?{urlencode(params)}"
+    return f"https://lms.yandex.ru/api/notifications?{urlencode(params)}"
